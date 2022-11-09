@@ -1,0 +1,37 @@
+/* Navigation menu */
+div.nav-menu {
+    border: 2px solid blue;
+    float: left;
+    width: 14.2%;
+    height: fit-content;
+    margin: 2.8% 0 0 2.8%;
+    position: fixed;
+}
+
+/* list in nav menu */
+.nav-menu ul {
+    list-style: none;
+    margin-left: 14.2%;
+}
+
+/* new-entry button */
+.new-entry {
+    margin: 5px 0 0 30%;
+    background-color: rgb(10, 169, 100);
+    opacity: 90%;
+    border-radius: 8px;
+    font-size: large;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+}
+
+.new-entry:hover {
+    opacity: 100%;
+}
+/* End new-entry button */
+
+/* Blog entries */
+div.blog {
+    margin-left: 50%;
+}
