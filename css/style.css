@@ -33,5 +33,9 @@ div.nav-menu {
 
 /* Blog entries */
 div.blog {
-    margin-left: 50%;
+    border: 2px solid blue;
+    text-align: center;
+    width: 50%;
+    margin: 5px 0 0 25%;
+    height: fit-content;
 }
