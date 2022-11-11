@@ -14,7 +14,6 @@
 
 <!-- Left navigation menu -->
 <div class="nav-menu">
-    <button type="button" class="new-entry">New Blog</button>
     <ul>
         <li>placeholder</li> <!-- TODO Use javascript to populate list with created blog entries -->
     </ul>
@@ -24,6 +23,12 @@
 <!-- Container for the blog entries -->
 <div class="blog">
     <h2>Blog</h2>
+    <form action="/add" method="post">
+        <label for="input"></label>
+<!--        <input name="input" id="input" type="text" placeholder="Type here">-->
+        <textarea name="input" id="input" rows="5" cols="10" wrap="soft" placeholder="Express your devotion to Douglas"></textarea>
+        <button type="button" class="new-entry">New Blog</button>
+    </form>
 </div>
 <!-- End container for the blog entries -->
 

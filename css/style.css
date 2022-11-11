@@ -16,8 +16,8 @@ div.nav-menu {
 
 /* new-entry button */
 .new-entry {
-    margin: 5px 0 0 30%;
-    background-color: rgb(10, 169, 100);
+    margin: 5px -15% 5px 0;
+    background-color: rgb(10, 169, 100); /* Help color picking https://giggster.com/guide/complementary-colors/ */
     opacity: 90%;
     border-radius: 8px;
     font-size: large;
@@ -35,7 +35,15 @@ div.nav-menu {
 div.blog {
     border: 2px solid blue;
     text-align: center;
-    width: 50%;
+    min-width: 50%;
+    width: fit-content;
     margin: 5px 0 0 25%;
     height: fit-content;
+}
+
+#input {
+    width: 60%;
+    height: fit-content;
+    overflow-wrap: break-word;
+    resize: none;
 }
