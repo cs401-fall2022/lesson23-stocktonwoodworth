@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    // Left navigation menu
+    // TODO make ID clickable, will link to the blog location
+    .nav-menu
+        h3 Blog View
+        ul
+            each txt in data
+                li
+                    span #{txt.blog_title} - #{txt.blog_id}
+        p STILL NEED TO POPULATE BLOG TITLE
+    // End nav menu
+
+    // Blog entries
+    form(action='/add' method='POST')
+        .blog
+            h2 Blog
+            label(for='blog_title')
+            // <input name="input" id="input" type="text" placeholder="Type here">
+            input(type='text' name='blog_title' id='blog_title' placeholder="Add title")
+            br
+            hr
+            label(for='blog_txt')
+            textarea#blog_txt(name='blog_txt' rows='2' cols='10' wrap='soft' placeholder='Express your devotion to Douglas')
+            button.new-entry() New Blog
+
+            // Populated list
+            ul
+                each txt in data
+                    li
+                        div#idTitle #{txt.blog_id} :: #{txt.blog_title}
+                        br
+                        div#formatBlog #{txt.blog_txt}
+                    br
+                br
+
+    form(action='/delete' method='POST')
+        p NOTE CHANGE THIS TO APPEAR LIKE MY_DESIGN
+        p TESTING IF DELETE FUNCTION WORKS, IT DOES! ADD DOESN'T THOUGH :(
+        input(type='txt' name='blog')
+        button(type='submit') Delete
