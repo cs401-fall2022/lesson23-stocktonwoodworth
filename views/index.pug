@@ -36,7 +36,16 @@ block content
                 br
 
     form(action='/delete' method='POST')
-        p NOTE CHANGE THIS TO APPEAR LIKE MY_DESIGN
-        p TESTING IF DELETE FUNCTION WORKS
+        p TESTING DELETE: CHANGE THIS TO APPEAR LIKE MY_DESIGN
         input(type='txt' name='blog')
         button(type='submit') Delete
+
+    form(action='/edit' method='POST')
+        hr
+        p TESTING EDIT: CHANGE THIS TO APPEAR LIKE MY_DESIGN
+        input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
+        br
+        input(name='title_edit' id='title_edit' placeholder='edit title')
+        br
+        textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
+        button(type='submit') Edit

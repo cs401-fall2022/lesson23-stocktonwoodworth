@@ -62,6 +62,32 @@ router.post('/add', (req, res, next) => {
     );
 })
 
+/**
+* Edit post
+ */
+router.post('/edit', (req, res, next) => {
+   console.log("Edit in progress.\n");
+   var db = new sqlite3.Database('mydb.sqlite3', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
+       (err) => {
+       if (err) {
+           console.log("Edit error: " + err);
+           exit(1);
+       }
+
+    console.log("Editing " + req.body.blog);
+
+        db.run(`UPDATE blog SET blog_txt = (?), blog_title = (?) WHERE blog_id = (?)`,[req.body.blog_txt_edit, req.body.title_edit, req.body.id_edit],
+            function(err){
+                if (err) {
+                    return console.error(err.message);
+                }
+            }
+        );
+        res.redirect('/');
+    }
+);
+});
+
 router.post('/delete', (req, res, next) => {
     console.log("deleting stuff without checking if it is valid! SEND IT!");
     var db = new sqlite3.Database('mydb.sqlite3',
