@@ -8,7 +8,7 @@ block content
         ul
             each txt in data
                 li
-                    span #{txt.blog_title} - #{txt.blog_id}
+                    a(href='#') #{txt.blog_title} - #{txt.blog_id}
     // End nav menu
 
     // Blog entries
@@ -38,9 +38,12 @@ block content
                     hr
                     input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
                     br
+                    br
                     input(name='title_edit' id='title_edit' placeholder='edit title')
                     br
+                    br
                     textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
+                    br
                     button(type='submit') Edit
 
         // Populated list

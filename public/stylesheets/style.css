@@ -1,3 +1,7 @@
+body {
+    background-color: lightgray;
+}
+
 /* Navigation menu */
 div.nav-menu {
     border: 2px solid blue;
@@ -95,7 +99,7 @@ div.blog {
     padding: 5px 5px 5px 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    transform: translate(18em, -60%);
+    transform: translate(18em, -50%);
 }
 
 /* Change color of dropdown links on hover */
