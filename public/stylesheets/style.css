@@ -12,12 +12,13 @@ div.nav-menu {
 /* remove bullet points */
 ul {
     list-style: none;
+    text-align: center;
 }
 
 /* list in nav menu */
 .nav-menu ul {
     list-style: none;
-    margin-left: 14.2%;
+
 }
 
 /* new-entry button */
@@ -30,10 +31,13 @@ ul {
     color: white;
     padding: 5px 5px 5px 5px;
     font-weight: bold;
+    /*transform: translateY(-4em);*/
+    transform: translate(-8em, -4em);
 }
 
 .new-entry:hover {
     opacity: 90%;
+    cursor: pointer;
 }
 /* End new-entry button */
 
@@ -62,3 +66,45 @@ div.blog {
 #formatBlog {
     padding-right: 20px;
 }
+
+
+/* Dropdown menu styling */
+/* Dropdown Button */
+.drop {
+    color: grey;
+    font-size: x-large;
+    border: none;
+    width: fit-content;
+    border-radius: 8px;
+    padding: 5px 5px 5px 5px;
+    transform: translate(13em, -300%);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    transform: translate(18em, -60%);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .drop {background-color: darkorange;}
+
+/* End dropdown menu styling */

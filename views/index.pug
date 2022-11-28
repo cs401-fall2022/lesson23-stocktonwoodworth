@@ -9,43 +9,46 @@ block content
             each txt in data
                 li
                     span #{txt.blog_title} - #{txt.blog_id}
-        p STILL NEED TO POPULATE BLOG TITLE
     // End nav menu
 
     // Blog entries
-    form(action='/add' method='POST')
-        .blog
-            h2 Blog
+    .blog
+        h2 Blog
+        // Add button
+        form(action='/add' method='POST' autocomplete='off')
             label(for='blog_title')
-            // <input name="input" id="input" type="text" placeholder="Type here">
             input(type='text' name='blog_title' id='blog_title' placeholder="Add title")
             br
             hr
             label(for='blog_txt')
             textarea#blog_txt(name='blog_txt' rows='2' cols='10' wrap='soft' placeholder='Express your devotion to Douglas')
             button.new-entry() New Blog
+        // Options button, contains delete and edit
+        .dropdown
+            button.drop &#9965
+            .dropdown-content
+                form(action='/delete' method='POST' autocomplete='off')
+                    .optionNav
+                        input(type='txt' name='blog' placeholder='ID of blog')
+                        button(type='submit') Delete
 
-            // Populated list
-            ul
-                each txt in data
-                    li
-                        div#idTitle #{txt.blog_id} :: #{txt.blog_title}
-                        br
-                        div#formatBlog #{txt.blog_txt}
+                hr
+                // Edit option
+                form(action='/edit' method='POST' autocomplete='off')
+                    hr
+                    input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
                     br
+                    input(name='title_edit' id='title_edit' placeholder='edit title')
+                    br
+                    textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
+                    button(type='submit') Edit
+
+        // Populated list
+        ul
+            each txt in data
+                li
+                    div#idTitle #{txt.blog_id} :: #{txt.blog_title}
+                    br
+                    div#formatBlog #{txt.blog_txt}
                 br
-
-    form(action='/delete' method='POST')
-        p TESTING DELETE: CHANGE THIS TO APPEAR LIKE MY_DESIGN
-        input(type='txt' name='blog')
-        button(type='submit') Delete
-
-    form(action='/edit' method='POST')
-        hr
-        p TESTING EDIT: CHANGE THIS TO APPEAR LIKE MY_DESIGN
-        input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
-        br
-        input(name='title_edit' id='title_edit' placeholder='edit title')
-        br
-        textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
-        button(type='submit') Edit
+            br
