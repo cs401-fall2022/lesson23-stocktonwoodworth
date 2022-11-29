@@ -11,6 +11,14 @@ block content
                     a(href='#') #{txt.blog_title} - #{txt.blog_id}
     // End nav menu
 
+    // Ad space
+    .ads
+        iframe(width='300' height='200' src='https://www.youtube.com/embed/Pb_a6oG_fqA?autoplay=1&mute=1'
+            title='Accelerating HPC Applications with NVIDIA BlueField Data Processing Unit'
+            frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; ' +
+        'gyroscope; picture-in-picture' allowfullscreen='')
+    // End ad space
+
     // Blog entries
     .blog
         h2 Blog
@@ -25,7 +33,8 @@ block content
             button.new-entry() New Blog
         // Options button, contains delete and edit
         .dropdown
-            button.drop &#9965
+            // gear icon
+            button.drop &#x2699;
             .dropdown-content
                 form(action='/delete' method='POST' autocomplete='off')
                     .optionNav
