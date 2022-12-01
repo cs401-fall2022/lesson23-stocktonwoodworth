@@ -1,66 +1,70 @@
 extends layout
 
 block content
-    // Left navigation menu
-    // TODO make ID clickable, will link to the blog location
-    .nav-menu
-        h3 Blog View
-        ul
-            each txt in data
-                li
-                    a(href='#') #{txt.blog_title} - #{txt.blog_id}
-    // End nav menu
 
-    // Ad space
-    .ads
-        iframe(width='300' height='200' src='https://www.youtube.com/embed/Pb_a6oG_fqA?autoplay=1&mute=1'
-            title='Accelerating HPC Applications with NVIDIA BlueField Data Processing Unit'
-            frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; ' +
-        'gyroscope; picture-in-picture' allowfullscreen='')
-    // End ad space
+    body
 
-    // Blog entries
-    .blog
-        h2 Blog
-        // Add button
-        form(action='/add' method='POST' autocomplete='off')
-            label(for='blog_title')
-            input(type='text' name='blog_title' id='blog_title' placeholder="Add title")
-            br
-            hr
-            label(for='blog_txt')
-            textarea#blog_txt(name='blog_txt' rows='2' cols='10' wrap='soft' placeholder='Express your devotion to Douglas')
-            button.new-entry() New Blog
-        // Options button, contains delete and edit
-        .dropdown
-            // gear icon
-            button.drop &#x2699;
-            .dropdown-content
-                form(action='/delete' method='POST' autocomplete='off')
-                    .optionNav
-                        input(type='txt' name='blog' placeholder='ID of blog')
-                        button(type='submit') Delete
+        // Left navigation menu
+        .nav-menu
+            h3 Blogs
+            ul
+                each txt in data
+                    li
+                        a(href='#') #{txt.blog_title} - #{txt.blog_id}
+        // End nav menu
 
-                hr
-                // Edit option
-                form(action='/edit' method='POST' autocomplete='off')
-                    hr
-                    input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
-                    br
-                    br
-                    input(name='title_edit' id='title_edit' placeholder='edit title')
-                    br
-                    br
-                    textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
-                    br
-                    button(type='submit') Edit
+        // Ad space
+        //.ads
+        //    iframe(width='300' height='200' src='https://www.youtube.com/embed/Pb_a6oG_fqA?autoplay=1&mute=1'
+        //        title='Accelerating HPC Applications with NVIDIA BlueField Data Processing Unit'
+        //        frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; ' +
+        //    'gyroscope; picture-in-picture' allowfullscreen='')
+        //// End ad space
 
-        // Populated list
-        ul
-            each txt in data
-                li
-                    div#idTitle #{txt.blog_id} :: #{txt.blog_title}
-                    br
-                    div#formatBlog #{txt.blog_txt}
+        // Blog entries
+        .blog
+            h2 Blog
+            // Add button
+            form(action='/add' method='POST' autocomplete='off')
+                label(for='blog_title')
+                input(type='text' name='blog_title' id='blog_title' placeholder="Add title")
                 br
-            br
+                hr
+                label(for='blog_txt')
+                textarea#blog_txt(name='blog_txt' rows='2' cols='10' wrap='soft' placeholder='Express your devotion to Douglas')
+                button.new-entry() New Blog
+            // Options button, contains delete and edit
+            .dropdown
+                // gear icon
+                button.drop &#x2699;
+                .dropdown-content
+                    form(action='/delete' method='POST' autocomplete='off')
+                        .optionNav
+                            input(type='txt' name='blog' placeholder='ID of blog')
+                            button(type='submit') Delete
+
+                    hr
+                    // Edit option
+                    form(action='/edit' method='POST' autocomplete='off')
+                        hr
+                        input(type='text' name='id_edit' id='id_edit' placeholder='ID of blog you want to edit')
+                        br
+                        br
+                        input(name='title_edit' id='title_edit' placeholder='edit title')
+                        br
+                        br
+                        textarea(name='blog_txt_edit' id='blog_txt_edit' rows='2' cols='10' wrap='soft' placeholder='change post')
+                        br
+                        button(type='submit') Edit
+
+            // Populated list
+            ul
+                each txt in data
+                    li
+                        div#idTitle #{txt.blog_id} :: #{txt.blog_title}
+                        br
+                        div#formatBlog #{txt.blog_txt}
+                    br
+                br
+
+

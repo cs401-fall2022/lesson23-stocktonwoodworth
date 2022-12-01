@@ -1,5 +1,11 @@
 body {
     background-color: whitesmoke;
+    margin: 0;
+}
+
+h2 {
+    font-family: "fangsong", Serif;
+    font-size: xx-large;
 }
 
 /* Navigation menu */
@@ -36,8 +42,7 @@ ul {
     color: white;
     padding: 5px 5px 5px 5px;
     font-weight: bold;
-    /*transform: translateY(-4em);*/
-    transform: translate(-100%, -4em);
+    transform: translate(-700%, -4em);
 }
 
 .new-entry:hover {
@@ -106,14 +111,14 @@ div.blog {
     transform: translate(18em, -50%);
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .drop {background-color: darkorange;}
+.dropdown:hover .drop {
+    background-color: darkorange;
+
+}
 
 /* End dropdown menu styling */
 
